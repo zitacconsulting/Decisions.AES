@@ -1,0 +1,45 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Zitac.AES/1.0.0": {
+        "dependencies": {
+          "DecisionsSDK": "7.10.1"
+        },
+        "runtime": {
+          "Zitac.AES.dll": {}
+        }
+      },
+      "DecisionsSDK/7.10.1": {
+        "runtime": {
+          "lib/net5.0/Decisions.Web.Core.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
+          },
+          "lib/net5.0/DecisionsFramework.dll": {
+            "assemblyVersion": "7.10.1.0",
+            "fileVersion": "7.10.1.3129"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Zitac.AES/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DecisionsSDK/7.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LVc2p6pU1E3KMHh+r7tTa65f5XARLBntwzRS4wPB2yNXUi0SKimD3Sj6bzweTeIj7iO3uz90iw8YDio1se18/w==",
+      "path": "decisionssdk/7.10.1",
+      "hashPath": "decisionssdk.7.10.1.nupkg.sha512"
+    }
+  }
+}
