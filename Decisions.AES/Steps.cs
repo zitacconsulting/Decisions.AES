@@ -69,8 +69,9 @@ namespace Zitac.AES.Steps;
         public string DecryptString(string cipherString, string Key)
         {
             byte[] byteKey = Convert.FromBase64String(Key);
-            byte[] cipherText = Convert.FromBase64String(cipherString);
-            byte[] IV = cipherText[0..15];
+            byte[] cipherIV = Convert.FromBase64String(cipherString);
+            byte[] IV = cipherIV.Take(16).ToArray();
+            byte[] cipherText = cipherIV.Skip(16).ToArray();
             // Check arguments.
             if (cipherText == null || cipherText.Length <= 0)
                 throw new ArgumentNullException("cipherText");
@@ -92,10 +93,9 @@ namespace Zitac.AES.Steps;
 
                 // Create a decryptor to perform the stream transform.
                 ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
-                byte[] cipherwithoutIV = decryptor.TransformFinalBlock(cipherText,16, cipherText.Length -16);
-
+                
                 // Create the streams used for decryption.
-                using (MemoryStream msDecrypt = new MemoryStream(cipherwithoutIV))
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
                 {
                     using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
                     {
@@ -110,6 +110,6 @@ namespace Zitac.AES.Steps;
                 }
             }
 
-            return plaintext;
+            return plaintext.Trim('\0');
         }
     }
