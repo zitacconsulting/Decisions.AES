@@ -1,4 +1,3 @@
 .vscode/solution-explorer
-Decisions.AES/obj/
-Decisions.AES/bin/Debug/net6.0/ref/Zitac.AES.dll
-Decisions.AES/bin/Debug/net6.0/Zitac.AES.pdb
+Decisions.AES/obj/*
+Decisions.AES/bin/*
