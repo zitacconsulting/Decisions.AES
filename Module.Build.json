@@ -4,7 +4,9 @@
         "CoreServicesDlls": [
             "./Decisions.AES/bin/Zitac.AES.dll"
         ],
-        "CustomImages": null,
+        "CustomImages": [
+            "aes.svg"
+        ],
         "CliDlls": null,
         "WebPages": null,
         "SilverlightDlls": null,
@@ -14,7 +16,7 @@
         "ObjectsToImport": null,
         "MsSqlScript": null
     },
-    "Version": "9.4.0",
-    "ImagePath": "aes.png",
+    "Version": "9.7.0",
+    "ImagePath": "aes.svg",
     "Description": "This module adds steps to use AES encryption"
 }
